@@ -1,0 +1,129 @@
+.contact-page {
+  padding-top: var(--header-h);
+  background: var(--mist);
+  min-height: 100vh;
+}
+
+.contact-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: clamp(24px, 4vw, 44px);
+  max-width: 860px;
+}
+
+.contact-form .lead {
+  font-size: 13.5px;
+  line-height: 2;
+  color: #3a3e45;
+  margin: 0 0 6px;
+}
+.contact-form .required-note {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blend);
+  margin: 4px 0 32px;
+}
+
+.field {
+  margin-bottom: 26px;
+}
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+@media (max-width: 600px) {
+  .field-row {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-bottom: 0;
+  }
+  .field-row .field {
+    margin-bottom: 26px;
+  }
+}
+
+.field label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.field label .req {
+  color: var(--blend);
+  margin-right: 4px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #fafafa;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--blend);
+  background: #fff;
+}
+.field textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 30px 0;
+}
+.consent input {
+  margin-top: 3px;
+  flex: none;
+}
+.consent a {
+  color: var(--blend);
+  text-decoration: underline;
+}
+
+.contact-form .submit-row {
+  text-align: center;
+}
+.contact-form .submit-row .btn {
+  width: 100%;
+  max-width: 360px;
+  justify-content: center;
+}
+.contact-form .submit-row .btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.contact-success {
+  background: #fff;
+  border-radius: 12px;
+  padding: clamp(40px, 6vw, 64px);
+  max-width: 860px;
+  text-align: center;
+}
+.contact-success h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 900;
+}
+.contact-success p {
+  margin: 0;
+  color: #3a3e45;
+  font-size: 14px;
+  line-height: 1.9;
+}

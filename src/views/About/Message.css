@@ -1,0 +1,33 @@
+.message-visual {
+  aspect-ratio: 16 / 6;
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 40%, #ee7a1e 0%, transparent 55%),
+    radial-gradient(circle at 75% 60%, #123a5c 0%, transparent 55%), linear-gradient(135deg, #2c3038, #16181d);
+  margin-bottom: 40px;
+}
+
+.message-heading {
+  font-size: clamp(24px, 3.4vw, 34px);
+  font-weight: 900;
+  margin: 0 0 28px;
+}
+
+.message-body p {
+  font-size: 14.5px;
+  line-height: 2.1;
+  color: #2a2d33;
+  margin: 0 0 24px;
+}
+
+.message-sign {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.message-sign .title {
+  color: var(--muted);
+  font-weight: 500;
+}

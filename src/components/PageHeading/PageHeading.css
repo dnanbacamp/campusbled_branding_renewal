@@ -1,0 +1,17 @@
+.page-heading {
+  padding: clamp(40px, 6vw, 72px) 0 clamp(28px, 4vw, 40px);
+}
+.page-heading h1 {
+  margin: 0;
+  font-family: var(--en);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.page-heading span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+}

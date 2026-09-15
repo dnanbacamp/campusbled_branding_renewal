@@ -1,0 +1,10 @@
+.curve {
+  display: block;
+  width: 100%;
+  height: var(--curve-h);
+  line-height: 0;
+}
+
+.curve svg {
+  display: block;
+}

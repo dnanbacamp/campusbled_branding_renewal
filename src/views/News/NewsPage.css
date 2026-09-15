@@ -1,0 +1,39 @@
+.news-page-hero {
+  padding-top: var(--header-h);
+  background: linear-gradient(120deg, #fdf3ea 0%, #fbeee0 60%, #f7f3ee 100%);
+}
+
+.news-year-tabs {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.news-year-tabs button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--en);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.news-year-tabs button:hover {
+  color: var(--ink);
+}
+.news-year-tabs button.active {
+  color: var(--blend);
+  border-color: var(--blend);
+}
+
+.news-page-list {
+  margin-top: 20px;
+}
+.news-page-empty {
+  padding: 40px 0;
+  color: var(--muted);
+  font-size: 14px;
+}

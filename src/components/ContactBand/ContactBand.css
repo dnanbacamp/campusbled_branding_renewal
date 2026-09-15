@@ -1,0 +1,38 @@
+.band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 760px) {
+  .band {
+    grid-template-columns: 1fr;
+  }
+}
+.band a {
+  padding: 44px 30px;
+  border-right: 1px solid var(--line);
+  display: block;
+  transition: background-color 0.3s ease;
+}
+.band a:last-child {
+  border-right: none;
+}
+.band a:hover {
+  background: var(--mist);
+}
+.band a:hover h3 {
+  color: var(--blend);
+}
+.band h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 900;
+  transition: color 0.25s ease;
+}
+.band p {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: #3a3e45;
+  line-height: 1.9;
+}
