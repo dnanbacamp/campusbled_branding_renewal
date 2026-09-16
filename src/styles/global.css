@@ -11,10 +11,17 @@
   --ja: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   --en: "Archivo", "Zen Kaku Gothic New", sans-serif;
 
-  --pad: clamp(20px, 5vw, 80px);
+  --pad: 20px;
   --curve-h: clamp(80px, 11vw, 180px);
   --maxw: 1180px;
   --header-h: 65px;
+}
+
+/* SP: 20px固定 / PC(768px以上): 最低80px、広い画面ではさらに広がる */
+@media (min-width: 768px) {
+  :root {
+    --pad: clamp(80px, 6vw, 120px);
+  }
 }
 
 .subpage-offset {
