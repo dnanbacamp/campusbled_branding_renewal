@@ -220,7 +220,8 @@
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 32px;
-  padding: 36px 0;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 .mega-menu-label {
   margin: 0;

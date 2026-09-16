@@ -122,7 +122,8 @@ a {
 }
 
 .sec {
-  padding: clamp(48px, 7vw, 96px) 0;
+  padding-top: clamp(48px, 7vw, 96px);
+  padding-bottom: clamp(48px, 7vw, 96px);
 }
 
 .mist {
