@@ -6,8 +6,6 @@ import SmartLink from "../../components/SmartLink/SmartLink";
 import { services } from "@/lib/content";
 import "./ServicesPage.css";
 
-const SWATCHES = ["a", "b", "c", "d"];
-
 export default function ServicesPage() {
   return (
     <div className="subpage-offset">
@@ -24,7 +22,7 @@ export default function ServicesPage() {
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={i * 80}>
               <div className="service-detail" id={s.slug}>
-                <div className={`service-visual ${SWATCHES[i % SWATCHES.length]}`} aria-hidden="true" />
+                <img className="service-visual" src={s.image} alt={s.name} />
                 <div>
                   <h2>
                     <em>{s.category}</em>

@@ -20,20 +20,10 @@
 }
 
 .service-visual {
+  width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 12px;
-}
-.service-visual.a {
-  background: linear-gradient(140deg, #ee7a1e, #f6b45c);
-}
-.service-visual.b {
-  background: linear-gradient(140deg, #123a5c, #2e6d9b);
-}
-.service-visual.c {
-  background: linear-gradient(140deg, #2c3038, #5a626e);
-}
-.service-visual.d {
-  background: linear-gradient(140deg, #d96a12, #123a5c);
+  object-fit: cover;
 }
 
 .service-detail h2 {

@@ -7,7 +7,7 @@ import "./Hero.css";
 const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
 const LINE_1 = "技術と真心で";
-const LINE_2 = "ビジネス機会を最大化する。";
+const LINE_2 = "ビジネス機会を最大化する";
 
 function renderChars(text: string, startIndex: number) {
   return Array.from(text).map((char, i) => (

@@ -21,6 +21,7 @@ export const services = [
     name: "SES事業",
     desc: "幅広い開発プロジェクトへの参画を通じて、エンジニアの成長と、お客様の現場が抱える課題の解決の両方を支えています。",
     href: "/services#ses",
+    image: "/services/ses.png",
     bullets: [
       "上流から下流まで、幅広い開発フェーズのプロジェクトに対応",
       "研修・サポート体制による未経験エンジニアの育成",
@@ -33,6 +34,7 @@ export const services = [
     name: "システム / アプリ開発",
     desc: "Webシステム・業務システム・アプリの開発から、サーバーの運用保守、ヘルプデスク支援まで一貫してお引き受けします。",
     href: "/services#development",
+    image: "/services/development.png",
     bullets: [
       "要件定義・設計・開発・テストまでワンストップで対応",
       "リリース後のサーバー運用保守も継続的に支援",
@@ -45,6 +47,7 @@ export const services = [
     name: "自社プロダクト / SaaS開発",
     desc: "現場とお客様のもとで得た知見をもとに、自社プロダクトとSaaSの企画・開発を進めています。第一弾はWebアクセシビリティ対応SaaS「フェアキャンパス」。",
     href: "/#product",
+    image: "/services/product.png",
     bullets: [
       "SES・受託開発で得た知見をもとにした自社プロダクトの企画・開発",
       "第一弾はWebアクセシビリティ対応SaaS「フェアキャンパス」",
@@ -57,6 +60,7 @@ export const services = [
     name: "AI・DX導入支援",
     desc: "AIとDXの導入から定着・活用まで伴走し、お客様の業務改善と事業成長をサポートします。",
     href: "/services#ai-dx",
+    image: "/services/ai-dx.png",
     bullets: [
       "業務課題の整理から、ツール選定・導入設計までを支援",
       "導入後の定着化・活用促進までハンズオンで伴走",
