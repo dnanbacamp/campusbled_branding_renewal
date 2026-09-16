@@ -18,7 +18,7 @@ export default function Works() {
         {works.map((w, i) => (
           <Reveal key={w.title} delay={i * 100}>
             <article className="work">
-              <div className={`work-shot ${w.variant}`}>{w.label}</div>
+              <img className="work-shot" src={w.image} alt={w.title} />
               <span className="tag">Web制作</span>
               <h3>{w.title}</h3>
               <p>{w.desc}</p>

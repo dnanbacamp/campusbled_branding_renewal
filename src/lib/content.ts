@@ -84,22 +84,19 @@ export const productPlans = [
 
 export const works = [
   {
-    variant: "w1",
-    label: "COMMUNITY",
+    image: "/works/community.png",
     title: "3つの拠点をつなぐコミュニティサイト",
     desc: "事業統合に伴うリニューアル。拠点ごとに分かれていた情報を一つの導線に整理しました。",
     client: "セレリアンス株式会社",
   },
   {
-    variant: "w2",
-    label: "MEDICAL",
+    image: "/works/medical.png",
     title: "医療法人のコーポレートサイト",
     desc: "サイト規模やアニメーション、レスポンシブデザインなど、どのような形でも取り回しやすいHTML構成に。",
     client: "誠泉会",
   },
   {
-    variant: "w3",
-    label: "UNIVERSITY",
+    image: "/works/university.png",
     title: "学会・研修情報の公開サイト",
     desc: "第9回日本臨床薬理学会開催にあわせ、開催準備から公開後の情報更新までを短期間で対応しました。",
     client: "自治医科大学",

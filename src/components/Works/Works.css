@@ -10,30 +10,15 @@
   }
 }
 .work-shot {
+  width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 8px;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  font-family: var(--en);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  font-size: 13px;
+  object-fit: cover;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .work:hover .work-shot {
   transform: scale(1.04);
   box-shadow: 0 14px 30px rgba(18, 58, 92, 0.22);
-}
-.work-shot.w1 {
-  background: linear-gradient(140deg, #123a5c, #2e6d9b);
-}
-.work-shot.w2 {
-  background: linear-gradient(140deg, #ee7a1e, #f6b45c);
-}
-.work-shot.w3 {
-  background: linear-gradient(140deg, #2c3038, #5a626e);
 }
 
 .work h3 {
