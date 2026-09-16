@@ -1,136 +1,105 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { aboutMenuItems, navLinks } from "@/lib/content";
 import "./Header.css";
 
 export default function Header() {
-  const [aboutMenuOpen, setAboutMenuOpen] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    setAboutMenuOpen(false);
-    setMobileMenuOpen(false);
-    setMobileAboutOpen(false);
+    setMenuOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    if (!aboutMenuOpen) return;
-    function handleClick(e: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setAboutMenuOpen(false);
-      }
-    }
     function handleKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setAboutMenuOpen(false);
+      if (e.key === "Escape") setMenuOpen(false);
     }
-    document.addEventListener("mousedown", handleClick);
-    document.addEventListener("keydown", handleKey);
+    if (menuOpen) {
+      document.addEventListener("keydown", handleKey);
+      document.body.style.overflow = "hidden";
+    }
     return () => {
-      document.removeEventListener("mousedown", handleClick);
       document.removeEventListener("keydown", handleKey);
-    };
-  }, [aboutMenuOpen]);
-
-  useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
-    return () => {
       document.body.style.overflow = "";
     };
-  }, [mobileMenuOpen]);
+  }, [menuOpen]);
 
-  const aboutActive = (pathname ?? "").startsWith("/about");
+  const close = () => setMenuOpen(false);
 
   return (
-    <div className="header-root" ref={menuRef}>
+    <div className={`header-root${menuOpen ? " menu-open" : ""}`}>
       <header className="header">
         <Link className="logo" href="/">
           <img className="logo-icon" src="/logo.svg" alt="" aria-hidden="true" />
           Campus Blend
         </Link>
-        <nav className="nav">
-          <button
-            type="button"
-            className={`nav-menu-trigger${aboutActive ? " active" : ""}`}
-            aria-expanded={aboutMenuOpen}
-            onClick={() => setAboutMenuOpen((v) => !v)}
-          >
-            会社概要
-            <span className={`chevron${aboutMenuOpen ? " open" : ""}`} aria-hidden="true" />
-          </button>
-          {navLinks.map((link) => (
-            <Link key={link.label} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-        <Link className="nav-cta" href="/contact">
-          お問い合わせ
-        </Link>
         <button
           type="button"
-          className={`hamburger${mobileMenuOpen ? " open" : ""}`}
-          aria-expanded={mobileMenuOpen}
+          className={`menu-trigger${menuOpen ? " open" : ""}`}
+          aria-expanded={menuOpen}
           aria-label="メニュー"
-          onClick={() => setMobileMenuOpen((v) => !v)}
+          onClick={() => setMenuOpen((v) => !v)}
         >
-          <span />
-          <span />
-          <span />
+          {!menuOpen && <span className="menu-trigger-label">MENU</span>}
+          <span className="menu-trigger-icon" aria-hidden="true">
+            {menuOpen ? (
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path
+                  d="M5 5L19 19M19 5L5 19"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
+              <>
+                <span />
+                <span />
+                <span />
+              </>
+            )}
+          </span>
         </button>
       </header>
 
-      {aboutMenuOpen && (
-        <div className="mega-menu">
-          <div className="wrap mega-menu-inner">
-            <p className="mega-menu-label">会社概要</p>
-            <div className="mega-menu-grid">
-              {aboutMenuItems.map((item) => (
-                <Link key={item.to} href={item.to} className="mega-tile" onClick={() => setAboutMenuOpen(false)}>
-                  <span className={`mega-tile-swatch ${item.swatch}`} aria-hidden="true" />
-                  <span className="mega-tile-label">{item.label}</span>
+      <div className={`fullscreen-menu${menuOpen ? " open" : ""}`} aria-hidden={!menuOpen}>
+        <div className="fullscreen-menu-body wrap">
+          <div className="menu-group">
+            <p className="menu-group-label">MENU</p>
+            <nav className="menu-links">
+              {navLinks.map((link) => (
+                <Link key={link.label} href={link.href} onClick={close}>
+                  {link.label}
                 </Link>
               ))}
-            </div>
+            </nav>
           </div>
-        </div>
-      )}
 
-      {mobileMenuOpen && (
-        <div className="mobile-menu">
-          <button
-            type="button"
-            className={`mobile-menu-section-trigger${aboutActive ? " active" : ""}`}
-            aria-expanded={mobileAboutOpen}
-            onClick={() => setMobileAboutOpen((v) => !v)}
-          >
-            会社概要
-            <span className={`chevron${mobileAboutOpen ? " open" : ""}`} aria-hidden="true" />
-          </button>
-          {mobileAboutOpen && (
-            <div className="mobile-menu-sublist">
+          <div className="menu-group">
+            <p className="menu-group-label">会社概要</p>
+            <nav className="menu-links">
               {aboutMenuItems.map((item) => (
-                <Link key={item.to} href={item.to} onClick={() => setMobileMenuOpen(false)}>
+                <Link key={item.to} href={item.to} onClick={close}>
                   {item.label}
                 </Link>
               ))}
-            </div>
-          )}
-          {navLinks.map((link) => (
-            <Link key={link.label} href={link.href} onClick={() => setMobileMenuOpen(false)}>
-              {link.label}
-            </Link>
-          ))}
-          <Link className="mobile-menu-cta" href="/contact" onClick={() => setMobileMenuOpen(false)}>
-            お問い合わせ
-          </Link>
+            </nav>
+          </div>
+
+          <div className="menu-group">
+            <p className="menu-group-label">CONTACT</p>
+            <nav className="menu-links">
+              <Link href="/contact" onClick={close}>
+                お問い合わせ
+              </Link>
+            </nav>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
