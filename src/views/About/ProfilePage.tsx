@@ -1,18 +1,31 @@
 "use client";
 
+import type { ReactNode } from "react";
 import AboutSubNav from "../../components/AboutSubNav/AboutSubNav";
 import PageHeading from "../../components/PageHeading/PageHeading";
 import Reveal from "../../components/Reveal/Reveal";
-import { companyProfile, services } from "@/lib/content";
+import { companyProfile } from "@/lib/content";
 import "./Profile.css";
 
-const rows: [string, string][] = [
+function List({ items }: { items: readonly string[] }) {
+  return (
+    <ul className="profile-list">
+      {items.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+const rows: [string, ReactNode][] = [
   ["会社名", companyProfile.name],
-  ["本社所在地", companyProfile.address],
-  ["設立", companyProfile.founded],
+  ["所在地", companyProfile.address],
+  ["設立日", companyProfile.founded],
   ["資本金", companyProfile.capital],
-  ["従業員数", companyProfile.employees],
-  ["代表者", companyProfile.representative],
+  ["決算日", companyProfile.settlementMonth],
+  ["代表取締役", companyProfile.representative],
+  ["事業一覧", <List items={companyProfile.businessList} key="business" />],
+  ["主要取引先", <List items={companyProfile.clients} key="clients" />],
 ];
 
 const organizationJsonLd = {
@@ -44,30 +57,6 @@ export default function ProfilePage() {
               </div>
             ))}
           </dl>
-        </Reveal>
-
-        <Reveal delay={80}>
-          <h2 className="h2">
-            事業内容
-            <small>SES / DEVELOPMENT / PRODUCT / AI</small>
-          </h2>
-        </Reveal>
-
-        <ol className="profile-business">
-          {services.map((s, i) => (
-            <Reveal key={s.name} delay={i * 80}>
-              <li>
-                <strong>{s.name}</strong>
-                <p>{s.desc}</p>
-              </li>
-            </Reveal>
-          ))}
-        </ol>
-
-        <Reveal delay={200}>
-          <p className="profile-note">
-            ※ 本ページの企業情報（本社所在地・設立・資本金・従業員数・代表者）はダミーです。確定情報が決まりましたら差し替えてください。
-          </p>
         </Reveal>
       </section>
     </>

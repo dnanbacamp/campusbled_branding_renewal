@@ -24,37 +24,10 @@
   }
 }
 
-.profile-business {
-  margin: 32px 0 0;
+.profile-list {
+  margin: 0;
   padding: 0;
   list-style: none;
   display: grid;
-  gap: 18px;
-}
-.profile-business li {
-  padding: 20px 24px;
-  background: var(--mist);
-  border-radius: 10px;
-}
-.profile-business strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 900;
-  margin-bottom: 6px;
-}
-.profile-business p {
-  margin: 0;
-  font-size: 13.5px;
-  line-height: 1.9;
-  color: #3a3e45;
-}
-
-.profile-note {
-  margin: 40px 0 0;
-  font-size: 12px;
-  color: var(--muted);
-  background: #fff8ef;
-  border: 1px dashed var(--blend);
-  border-radius: 8px;
-  padding: 14px 18px;
+  gap: 6px;
 }

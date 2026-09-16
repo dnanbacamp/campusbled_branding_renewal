@@ -227,11 +227,31 @@ export const footerColumns = [
 // ---------- ABOUT: 企業情報 ----------
 export const companyProfile = {
   name: "株式会社Campus Blend",
-  address: "【要入力】東京都◯◯区◯◯ ◯-◯-◯ ◯◯ビル",
-  founded: "【要入力】20XX年X月X日",
-  capital: "【要入力】◯◯◯万円",
-  employees: "【要入力】◯◯名（20XX年X月現在）",
-  representative: "【要入力】代表取締役　◯◯　◯◯",
+  address: "千葉県柏市南逆井4-19-16",
+  founded: "2023年7月14日",
+  capital: "10,000,000円",
+  settlementMonth: "7月",
+  representative: "吉田 優太",
+  businessList: [
+    "WEBサイトの企画、制作、構築、運用",
+    "WEBコンサルティング、SEO対策",
+    "Webアクセシビリティ推進事業",
+    "アプリの企画、制作、構築、運用",
+    "アプリコンサルティング、SEO対策",
+    "広告、プロモーションの企画",
+    "オウンドメディアの運営",
+    "記事作成",
+  ],
+  clients: [
+    "SERELIENCE株式会社さま",
+    "株式会社アステルズさま",
+    "一般社団法人おしごとの和さま",
+    "アナタの財務部長合同会社さま",
+    "自治医科大学さま",
+    "株式会社VCさま",
+    "株式会社アールストリートさま",
+    "ソウゾウ合同会社さま",
+  ],
 };
 
 // ---------- ABOUT: メッセージ ----------
@@ -243,7 +263,7 @@ export const messageContent = {
     "AI・DXの進展により、これからの時代はすべての事業者にとって技術との向き合い方が問われます。私たちは技術力だけでなく、お客様や仲間への真心を掛け合わせることで、これからも新しいビジネス機会をつくり続けてまいります。",
   ],
   signatureTitle: "代表取締役",
-  signatureName: "【要入力】",
+  signatureName: "吉田 優太",
 };
 
 // ---------- ABOUT: 経営理念 ----------
@@ -274,7 +294,7 @@ export const historyEntries = [
     ],
   },
   { year: "2025", entries: [{ month: "02", text: "「第11回ベンチャー稲門会大交流会」の様子が高田馬場経済新聞に掲載" }] },
-  { year: "【要入力】", entries: [{ month: "—", text: "株式会社Campus Blend 設立" }] },
+  { year: "2023", entries: [{ month: "07", text: "株式会社Campus Blend 設立" }] },
 ];
 
 // ---------- CONTACT ----------
