@@ -5,7 +5,7 @@
 }
 .row {
   display: grid;
-  grid-template-columns: 210px 1fr 56px;
+  grid-template-columns: 210px 1fr;
   gap: 28px;
   align-items: center;
   background: #fff;
@@ -30,6 +30,16 @@
   color: var(--blend);
   margin-bottom: 6px;
 }
+.row-name-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.row-name-title .circle {
+  width: 34px;
+  height: 34px;
+  justify-self: auto;
+}
 .row p {
   margin: 0;
   font-size: 13.5px;
@@ -46,10 +56,7 @@
 
 @media (max-width: 760px) {
   .row {
-    grid-template-columns: 1fr 46px;
+    grid-template-columns: 1fr;
     gap: 14px;
-  }
-  .row p {
-    grid-column: 1 / -1;
   }
 }

@@ -30,10 +30,12 @@ export default function Services() {
               <SmartLink className="row" href={s.href}>
                 <div className="row-name">
                   <em>{s.category}</em>
-                  {s.name}
+                  <span className="row-name-title">
+                    {s.name}
+                    <span className="circle" aria-hidden="true" />
+                  </span>
                 </div>
                 <p>{s.desc}</p>
-                <span className="circle" aria-hidden="true" />
               </SmartLink>
             </Reveal>
           ))}
