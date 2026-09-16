@@ -15,9 +15,6 @@
     grid-template-columns: 1fr;
   }
 }
-.service-detail:nth-child(even) .service-visual {
-  order: 2;
-}
 
 .service-visual {
   width: 100%;
