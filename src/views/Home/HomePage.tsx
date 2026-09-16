@@ -14,7 +14,7 @@ export default function HomePage() {
     <>
       <Hero />
       {/* 100vh の FV 直下に、次セクションのカーブの頂点が来る */}
-      <CurveDivider direction="up" fill="#faf9f7" />
+      <CurveDivider direction="up" background="#faf9f7" />
       <Services />
       <CurveDivider direction="down" />
       <Product />
