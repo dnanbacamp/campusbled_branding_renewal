@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0e1a;
+
+  --color-ink: #0a0e1a;
+  --color-ink-soft: #11172a;
+  --color-accent: #2f5fe0;
+  --color-accent-soft: #eaf0fd;
+  --color-muted: #f4f6f9;
+  --color-muted-dark: #eceff3;
+  --color-line: #e3e7ee;
+  --color-line-dark: #263049;
+  --color-text-muted: #64748b;
+  --color-placeholder: #dce2ea;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-muted: var(--color-muted);
+  --color-muted-dark: var(--color-muted-dark);
+  --color-line: var(--color-line);
+  --color-line-dark: var(--color-line-dark);
+  --color-text-muted: var(--color-text-muted);
+  --color-placeholder: var(--color-placeholder);
+  --font-sans: var(--font-geist-sans), "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Keep anchored sections clear of the fixed header. */
+  scroll-padding-top: 4rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(6px);
+    opacity: 1;
+  }
+}
+
+.animate-scroll-hint {
+  animation: scroll-hint 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-scroll-hint {
+    animation: none;
+  }
+}
